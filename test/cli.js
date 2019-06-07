@@ -34,7 +34,7 @@ describe('#cli', () => {
     sandbox.restore();
   });
 
-  it('#should resolves with no error when argv.thePromise resolves', async () => {
+  it('#should resolves with no error when AutoMerger.handler resolves', async () => {
     const promise = { catch: sinon.spy() };
     sandbox.stub(AutoMerger, 'handler').returns(promise);
     delete require.cache[path.resolve(__dirname, '../cli.js')];
@@ -42,7 +42,7 @@ describe('#cli', () => {
     sinon.assert.notCalled(logErrorSpy);
   });
 
-  it('#should log error when argv.thePromise rejects with error', async () => {
+  it('#should log error when AutoMerger.handler rejects with error', async () => {
     const promise = { catch: sinon.spy() };
     sandbox.stub(AutoMerger, 'handler').returns(promise);
 
