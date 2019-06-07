@@ -1,0 +1,65 @@
+{
+  "name": "github-pr-auto-merge",
+  "version": "0.1.0",
+  "description": "Github Pull Request Auto Merge",
+  "main": "index.js",
+  "bin": {
+    "prautomerge": "cli.js"
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "lint": "eslint . --fix",
+    "test": "nyc mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawnwords/github-pr-auto-merge.git"
+  },
+  "keywords": [
+    "github",
+    "pull request",
+    "automerge"
+  ],
+  "author": "dawnwords",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dawnwords/github-pr-auto-merge/issues"
+  },
+  "homepage": "https://github.com/dawnwords/github-pr-auto-merge#readme",
+  "devDependencies": {
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.13.0",
+    "mocha": "6.1.4",
+    "mock-http-server": "1.2.0",
+    "nyc": "14.1.1",
+    "sinon": "7.3.2"
+  },
+  "dependencies": {
+    "axios": "0.19.0",
+    "log": "6.0.0",
+    "log-node": "7.0.0",
+    "yargs": "13.2.4"
+  },
+  "nyc": {
+    "exclude": [
+      "coverage/**",
+      "out/**",
+      "test/**"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "all": true,
+    "check-coverage": true,
+    "statements": 100,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100
+  }
+}
